@@ -12,9 +12,9 @@ sudo tar -C /usr/local -xzf go1.18.linux-amd64.tar.gz
 
 # add the following to `$HOME/.bashrc`
 
-#export GOROOT=/usr/local/go
-#export GOPATH=$HOME/go
-#export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
 
 # get a new shell/logout + login
 
