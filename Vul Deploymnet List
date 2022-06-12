@@ -1,0 +1,84 @@
+For this turorial, we have "10" vulnerable images for "10" CVEs.
+NOTE !!! Some CVE'S HAVE OCCURRED ON A DIFFERENT IMAGE RELATED TO ANOTHER CVE, WE ARE RESPECTING TO THEM :D
+----------------------------------------------------------------------------------------------------------------------------
+        CWE-79
+                (!!!Yeni CVE ve İmage Bulunmalı) 
+                CVE_ID: CVE-2020-9496   DEPLOYMENT: 30001   (nuclei cannot find the cve !!! Also not worked in local)  !!!!!its not CWE-79!!!
+                IMAGE_NAME: 'vulfocus/tomcat-cve_2020_9484:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/tomcat-cve_2020_9484/tags'
+                PULL_COMMAND: 'docker pull vulfocus/tomcat-cve_2020_9484:latest' 
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 8080:8080 -d vulfocus/tomcat-cve_2020_9484:latest'
+                NUCLEI_COMMAND: ''
+                CVE-2019-7543   DEPLOYMENT: 30002      (NUCLEI SUCCESSED)
+                IMAGE_NAME: 'vulfocus/kindeditor-cve_2018_18950:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/kindeditor-cve_2018_18950/tags' 
+                PULL_COMMAND: 'docker pull vulfocus/kindeditor-cve_2018_18950'
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 80:80 -d vulfocus/kindeditor-cve_2018_18950:latest'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30002 -t  ~/nuclei-templates/cves/2019/CVE-2019-7543.yaml'
+                                sudo nuclei -u http://localhost:30002 -t  ~/nuclei-templates/cves/2019/CVE-2019-7543.yaml
+----------------------------------------------------------------------------------------------------------------------------
+        CWE-78
+                CVE-2019-15107     DEPLOYMENT: 30003    (NUCLEI SUCCESSED)
+                IMAGE_NAME: 'vulhub/webmin:1.910'
+                IMAGE_URL: 'https://github.com/vulhub/vulhub/tree/master/webmin/CVE-2019-15107'
+                RUN_COMMANDS: 'sudo docker-compose up (from the directory where the docker-compose.yaml exists)'
+                              'sudo docker run -it -p 10000:10000 -d  vulhub/webmin:1.910'
+                NUCLEI_COMMAND: 'sudo nuclei -u https://144.122.71.18:30003 -t ~/nuclei-templates/cves/2019/CVE-2019-15107.yaml'
+                                
+                                sudo nuclei -u https://localhost:30003 -t ~/nuclei-templates/cves/2019/CVE-2019-15107.yaml
+                CVE-2019-16662      DEPLOYMENT: 30004      (NUCLEI SUCCESSED)
+                IMAGE_NAME: 'vulfocus/rconfig-cve_2019_16662:latest'
+                IMAGE_URL: 'https://github.com/fab1ano/rconfig-cves' 
+                PULL_COMMAND: 'https://hub.docker.com/r/vulfocus/rconfig-cve_2019_16662/tags'
+                RUN_COMMANDS: 'sudo docker run -it -p 8080:8080 -d vulfocus/rconfig-cve_2019_16662:latest'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30004 -t  ~/nuclei-templates/cves/2019/CVE-2019-16662.yaml' 
+                                sudo nuclei -u http://localhost:30004 -t  ~/nuclei-templates/cves/2019/CVE-2019-16662.yaml
+----------------------------------------------------------------------------------------------------------------------------
+        CWE-89
+                CVE-2020-9483         DEPLOYMENT: 30005     (NUCLEI SUCCESSED) (Also in my local)
+                IMAGE_NAME: 'vulfocus/skywalking-cve_2020_9483:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/skywalking-cve_2020_9483/tags' 
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 8080:8080 -d vulfocus/skywalking-cve_2020_9483:latest'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml'
+                                sudo nuclei -u http://localhost:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml                                 
+                (!!!Yeni CVE ve İmage Bulunmalı)
+            -   CVE-2020-12720     DEPLOYMENT: 30009     (NUCLEI SUCCESSED)   (CWE 89 gibi durmuyor)
+                IMAGE_NAME: 'vulfocus/vbulletin-cve_2019_16759:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/vbulletin-cve_2019_16759/tags' 
+                RUN_COMMANDS: ' (!!! the port no is not given under the image layers'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30009 -t  ~/nuclei-templates/cves/2020/CVE-2020-12720.yaml'
+            
+----------------------------------------------------------------------------------------------------------------------------
+        CWE-22
+            - CVE-2020-17518       DEPLOYMENT: 30006   (NUCLEI SUCCESSED)
+                IMAGE_NAME: 'flink-cve-2020-17518'
+                IMAGE_URL: 'https://github.com/vulhub/vulhub/tree/master/flink/CVE-2020-17519' 
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 8081:8081 -d flink-cve-2020-17518'
+                NUCLEI_COMMAND: 'nuclei -u http://144.122.71.18:30006 -t  ~/nuclei-templates/cves/2020/CVE-2020-17518.yaml'
+                                sudo nuclei -u http://localhost:30006 -t  ~/nuclei-templates/cves/2020/CVE-2020-17518.yaml
+            - CVE-2021-26086       DEPLOYMENT: 30010     (NUCLEI SUCCESSED)
+                IMAGE_NAME: 'vulfocus/jira-cve_2019_8451:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/jira-cve_2019_8451/tags' 
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 8080:8080 -d vulfocus/jira-cve_2019_8451:latest'
+                NUCLEI_COMMAND: 'nuclei -u http://144.122.71.18:30010 -t  ~/nuclei-templates/cves/2021/CVE-2021-26086.yaml'
+                                 sudo nuclei -u http://localhost:10010 -t  ~/nuclei-templates/cves/2021/CVE-2021-26086.yaml 
+----------------------------------------------------------------------------------------------------------------------------
+        CWE-434
+                CVE-2020-25213   DEPLOYMENT: 30007  (NUCLEI SUCCESSED)
+                IMAGE_NAME: 'ridgesecuritydocker/cve-2020-25213:mywordpress1'
+                IMAGE_URL: 'https://hub.docker.com/r/ridgesecuritydocker/cve-2020-25213/tags' 
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 80:80 -d ridgesecuritydocker/cve-2020-25213:mywordpress1'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30007 -t  ~/nuclei-templates/cves/2020/CVE-2020-25213.yaml'
+                                sudo nuclei -u http://localhost:30007 -t  ~/nuclei-templates/cves/2020/CVE-2020-25213.yaml
+                (!!!Yeni CVE ve İmage Bulunmalı)
+                CVE-2021-25281 (May replaced by another ...)    DEPLOYMENT: 30008    (NUCLEI SUCCESSED)   (!!!CWE 434 değil)
+                IMAGE_NAME: 'vulfocus/salt-cve_2021_25281:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/salt-cve_2021_25281/tags' 
+                RUN_COMMANDS: '(possibly)sudo docker run -it -p 8000:8000 -d vulfocus/salt-cve_2021_25281:latest'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30008 -t  ~/nuclei-templates/cves/2021/CVE-2021-25281.yaml'
+----------------------------------------------------------------------------------------------------------------------------
+Burp Suit RUN_COMMANDS
+- https://medium.com/swlh/getting-started-with-burp-suite-on-ubuntu-3c1e665122a3
+- https://yw9381.github.io/Burp_Suite_Doc_en_us/burp/documentation/desktop/getting-started/launching-from-command-line.html
+- https://www.oracle.com/java/technologies/downloads/
+- https://forum.portswigger.net/thread/run-burp-on-openjdk-17-5611cb564e50e
