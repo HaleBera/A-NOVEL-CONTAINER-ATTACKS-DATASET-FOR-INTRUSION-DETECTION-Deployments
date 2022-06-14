@@ -48,9 +48,22 @@ NOTE !!! Some CVE'S HAVE OCCURRED ON A DIFFERENT IMAGE RELATED TO ANOTHER CVE, W
                 RUN_COMMANDS: '(possibly)sudo docker run -it -p 8080:8080 -d vulfocus/skywalking-cve_2020_9483:latest'
                 NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml'
                                 sudo nuclei -u http://localhost:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml   
-                                
-                                
-                CVE-2020-35847     DEPLOYMENT: 300011     (NUCLEI SUCCESSED)  
+                 
+                CVE--2020-0618     DEPLOYMENT: 300011     (NUCLEI SUCCESSED)  
+                IMAGE_NAME: 'wortell/cve-2020-0618:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/wortell/cve-2020-0618/tags' 
+                RUN_COMMANDS: ' (!!! the port no is not given under the image layers'
+                NUCLEI_COMMAND:    
+                 
+                (not)CVE-2020-36112     DEPLOYMENT: 300011     (NUCLEI SUCCESSED)  
+                IMAGE_NAME: 'vulfocus/vbulletin-cve_2019_16759:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/vbulletin-cve_2019_16759/tags' 
+                RUN_COMMANDS: ' (!!! the port no is not given under the image layers'
+                NUCLEI_COMMAND:    
+                     https://github.com/aleksejspopovs/cve-2020-16012/tree/main/exploit
+                     https://github.com/ly4k/BlueGate/blob/master/BlueGate.py
+                     
+                (not)CVE-2020-35847     DEPLOYMENT: 300011     (NUCLEI SUCCESSED)  
                 IMAGE_NAME: 'vulfocus/vbulletin-cve_2019_16759:latest'
                 IMAGE_URL: 'https://hub.docker.com/r/vulfocus/vbulletin-cve_2019_16759/tags' 
                 RUN_COMMANDS: ' (!!! the port no is not given under the image layers'
