@@ -9,6 +9,13 @@ NOTE !!! Some CVE'S HAVE OCCURRED ON A DIFFERENT IMAGE RELATED TO ANOTHER CVE, W
                 PULL_COMMAND: 'docker pull vulfocus/tomcat-cve_2020_9484:latest' 
                 RUN_COMMANDS: '(possibly)sudo docker run -it -p 8080:8080 -d vulfocus/tomcat-cve_2020_9484:latest'
                 NUCLEI_COMMAND: ''
+                
+                CVE-2019-10092
+                'sudo nuclei -u http://144.122.71.18:30002 -t  ~/nuclei-templates/cves/2019/CVE-2019-7543.yaml'
+                'sudo nuclei -u http://localhost.10022 -t  ~/nuclei-templates/cves/2019/CVE-2019-10092.yaml'
+                
+                
+                
                 CVE-2019-7543   DEPLOYMENT: 30002      (NUCLEI SUCCESSED)
                 IMAGE_NAME: 'vulfocus/kindeditor-cve_2018_18950:latest'
                 IMAGE_URL: 'https://hub.docker.com/r/vulfocus/kindeditor-cve_2018_18950/tags' 
@@ -40,7 +47,16 @@ NOTE !!! Some CVE'S HAVE OCCURRED ON A DIFFERENT IMAGE RELATED TO ANOTHER CVE, W
                 IMAGE_URL: 'https://hub.docker.com/r/vulfocus/skywalking-cve_2020_9483/tags' 
                 RUN_COMMANDS: '(possibly)sudo docker run -it -p 8080:8080 -d vulfocus/skywalking-cve_2020_9483:latest'
                 NUCLEI_COMMAND: 'sudo nuclei -u http://144.122.71.18:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml'
-                                sudo nuclei -u http://localhost:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml                                 
+                                sudo nuclei -u http://localhost:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-9483.yaml   
+                                
+                                
+                CVE-2020-35847     DEPLOYMENT: 300011     (NUCLEI SUCCESSED)  
+                IMAGE_NAME: 'vulfocus/vbulletin-cve_2019_16759:latest'
+                IMAGE_URL: 'https://hub.docker.com/r/vulfocus/vbulletin-cve_2019_16759/tags' 
+                RUN_COMMANDS: ' (!!! the port no is not given under the image layers'
+                NUCLEI_COMMAND: 'sudo nuclei -u http://localhost:30005 -t  ~/nuclei-templates/cves/2020/CVE-2020-35847.yaml'
+                
+                
                 (!!!Yeni CVE ve İmage Bulunmalı)
             -   CVE-2020-12720     DEPLOYMENT: 30009     (NUCLEI SUCCESSED)   (CWE 89 gibi durmuyor)
                 IMAGE_NAME: 'vulfocus/vbulletin-cve_2019_16759:latest'
