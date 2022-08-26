@@ -11,7 +11,7 @@
          CWE-89:  CVE-2020-9483  => skywalking | vulfocus/skywalking-cve_2020_9483:latest | Port: 8080-30005
          
          CWE-22:  CVE-2020-17518 => flink | vulhub/flink:1.11.2 | Port: 8081-30006
-         CWE-22:  CVE-2021-26086 => 
+         CWE-22:  CVE-2021-26086 => jira | vulfocus/jira-cve_2019_8451:latest | Port: 8080-30080 
          
          CWE-434: CVE-2020-25213 => wp-file-manager | ridgesecuritydocker/cve-2020-25213:mywordpress1 | Port: 80-30007
 
